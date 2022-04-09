@@ -58,6 +58,7 @@ Los resultados se tienen que ver con el formato presentado en el menú.
 #include <ctype.h>
 #include "validaciones.h"
 #include "calculos.h"
+#include "funcionestpuno.h"
 
 //----------------------------
 //	> INICIO FUNCION PRINCIPAL
@@ -455,25 +456,31 @@ int main(void)
 			break;
 
 		case 7:
-				if(flagOpcionSieteHabilitada == 1)
+			printf("\n");
+			printf("__________________________________________\n");
+			printf("\n");
+			printf("MP -> [7] BORRAR LOS DATOS INGRESADOS\n");
+			printf("__________________________________________\n");
+			printf("\n");
+			if(flagOpcionSieteHabilitada == 1)
+			{
+				recalcularCostos = validacionOpcionesCharDobles ("Si quiere borrar los datos ingrese", "ERROR! Ingrese una opcion valida", "[I] Borrar datos automaticos", "[S] Salir", 'I', 'S');
+				if (recalcularCostos == 'I')
 				{
-					recalcularCostos = validacionOpcionesCharDobles ("Si quiere borrar los datos ingrese", "ERROR! Ingrese una opcion valida", "[I] Borrar datos automaticos", "[S] Salir", 'I', 'S');
-					if (recalcularCostos == 'I')
-					{
-						flagCargaForzada = 0;
-						flagCostosCalculados = 0;
-						flagKilometrosValidados = 0;
-						flagprecioIngresadoAerolineas = 0;
-						flagprecioIngresadoLatam = 0;
-						flagResultadosMostrados = 0;
-						flagOpcionSieteHabilitada = 0;
-					}
+					flagCargaForzada = 0;
+					flagCostosCalculados = 0;
+					flagKilometrosValidados = 0;
+					flagprecioIngresadoAerolineas = 0;
+					flagprecioIngresadoLatam = 0;
+					flagResultadosMostrados = 0;
+					flagOpcionSieteHabilitada = 0;
 				}
-				if(flagOpcionSieteHabilitada == 0)
-				{
-					opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 7);
-				}
-				system("cls");
+			}
+			if(flagOpcionSieteHabilitada == 0)
+			{
+				opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 7);
+			}
+			system("cls");
 			break;
 		}
 	}
@@ -497,9 +504,3 @@ int main(void)
 	//------------------------
 	return EXIT_SUCCESS;
 }
-
-
-
-
-
-
