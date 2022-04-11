@@ -49,6 +49,7 @@ void cargaForzada (void)
 /// @brief Funcion que emite mensaje si la bandera es verdadera para evitar que el usuario siga adelante y vuelva atras
 ///
 /// @param flag	-> si la vandera pasada como parametro es 1 muestra el mensaje, si no, deja al usuario continuar
+
 void mensajeDatosForzadosIngresados (int flag)
 {
 	if(flag == 1)
