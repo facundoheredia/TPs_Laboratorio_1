@@ -18,26 +18,30 @@
 void cargaForzada (void)
  {
 	//	>> variables de funcion
-	int kilometros;
+	float kilometros;
 	float precioAerolineas;
 	float precioLatam;
+	double valorMonedaBtc;
+
 	//	>> inicializacion de variables de funcion
 	kilometros = 7090;
 	precioAerolineas = 162965;
 	precioLatam = 159339;
+	valorMonedaBtc = 4606954.55;
+
 	//	>> calculos de funcion
-	printf("KMs Ingresados: %d Km\n", kilometros);
+	printf("KMs Ingresados: %.2f Km\n", kilometros);
 	printf("\n");
 	printf("Precio Aerolineas: $ %.2f\n", precioAerolineas);
 	printf("a) Precio con tarjeta de débito: $ %.2f\n", calculoDescuentoOInteres (precioAerolineas, 10, 0));
 	printf("b) Precio con tarjeta de crédito: $ %.2f\n", calculoDescuentoOInteres (precioAerolineas, 25, 1));
-	printf("c) Precio pagando con bitcoin: %.8f BTC \n", calculoCambioDeMoneda (precioAerolineas, 4606954.55, 0));
+	printf("c) Precio pagando con bitcoin: %.8f BTC \n", calculoCambioDeMoneda (precioAerolineas, valorMonedaBtc, 0));
 	printf("d) Precio unitario: $ %.2f\n", calculoPrecioUnitario (precioAerolineas, kilometros));
 	printf("\n");
 	printf("Precio Latam: $ %.2f\n", precioLatam);
 	printf("a) Precio con tarjeta de débito: $ %.2f\n", calculoDescuentoOInteres (precioLatam, 10, 0));
 	printf("b) Precio con tarjeta de crédito: $ %.2f\n", calculoDescuentoOInteres (precioLatam, 25, 1));
-	printf("c) Precio pagando con bitcoin: %.8f BTC \n", calculoCambioDeMoneda (precioLatam, 4606954.55, 0));
+	printf("c) Precio pagando con bitcoin: %.8f BTC \n", calculoCambioDeMoneda (precioLatam, valorMonedaBtc, 0));
 	printf("d) Precio unitario: $ %.2f \n", calculoPrecioUnitario (precioLatam, kilometros));
 	printf("\n");
 	printf("La diferencia de precio es: $ %.2f \n", calculoDiferenciaDosNumerosFlotantes (precioAerolineas, precioLatam));

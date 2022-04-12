@@ -60,6 +60,9 @@ Los resultados se tienen que ver con el formato presentado en el menú.
 #include "calculos.h"
 #include "funcionestpuno.h"
 
+//	> DEFINICIONES
+#define VALOR_BTC 4606954.55
+
 //----------------------------
 //	> INICIO FUNCION PRINCIPAL
 //----------------------------
@@ -74,7 +77,7 @@ int main(void)
 	//		>> variables menu principal
 	int opcionElegida;
 	//		>> variables opcion [1]
-	int kilometros;
+	float kilometros;
 	int flagKilometrosValidados;
 	//		>> variables opcion [2]
 	char empresaDeVuelo;
@@ -90,8 +93,8 @@ int main(void)
 	float precioTarjetaDebitoLatam;
 	float precioTarjetaCreditoAerolineas;
 	float precioTarjetaCreditoLatam;
-	float precioEnBtcAerolineas;
-	float precioEnBtcLatam;
+	double precioEnBtcAerolineas;
+	double precioEnBtcLatam;
 	char recalcularCostos;
 	int flagCostosCalculados;
 	//		>> variables opcion [4]
@@ -101,7 +104,7 @@ int main(void)
 	//		>> variables opcion circunstancial [7]
 	int flagOpcionSieteHabilitada;
 
-	//	> INICIALIZACION DE VARIABLES <>
+	//	> INICIALIZACION DE VARIABLES
 	//		>> variables opcion [1]
 	flagKilometrosValidados = 0;
 	//		>> variables opcion [2]
@@ -115,6 +118,7 @@ int main(void)
 	flagCargaForzada = 0;
 	//		>> variables opcion circunstancial [7]
 	flagOpcionSieteHabilitada = 0;
+
 	//--------------------------------------
 	//	> INICIO DEL PROGRAMA - PRESENTACION
 	//--------------------------------------
@@ -130,6 +134,7 @@ int main(void)
 	//		>> Validacion de inicio
 	respuesta = validacionOpcionesCharDobles ("BIENVENIDO AL PROGRAMA DE COSTOS DE VUELOS\n", "ERROR! Ingrese una opcion valida", "[I] Iniciar programa", "[S] Salir del programa", 'I', 'S');
 	system("cls");
+
 	//-------------------------------
 	//	> MENU PRINCIPAL DEL PROGRAMA
 	//-------------------------------
@@ -147,7 +152,7 @@ int main(void)
 		{
 			if(flagKilometrosValidados == 1)
 			{
-				printf("[1] KIL%cMETROS DE VUELO INGRESADOS %d KM.\n", 224, kilometros);
+				printf("[1] KIL%cMETROS DE VUELO INGRESADOS %.2f KM.\n", 224, kilometros);
 				printf("\t> Ingrese [1] para modificarlo\n");
 			}
 			if(flagCostosCalculados == 2)
@@ -257,6 +262,7 @@ int main(void)
 			opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 7);
 		}
 		system("cls");
+
 		//-------------
 		//	> SUB MENUS
 		//-------------
@@ -279,7 +285,7 @@ int main(void)
 			}
 			else
 			{
-			kilometros = validacionNumeroEnteroPositivo ("Ingrese los kilometros del vuelo", "ERROR! Ingrese un numero mayor a 0");
+			kilometros = validacionNumeroFlotantePositivo ("Ingrese los kilometros del vuelo", "ERROR! Ingrese un numero mayor a 0");
 			flagKilometrosValidados = 1;
 			}
 			system("cls");
@@ -357,8 +363,8 @@ int main(void)
 					precioTarjetaDebitoLatam = calculoDescuentoOInteres (precioLatam, 10, 0);
 					precioTarjetaCreditoAerolineas = calculoDescuentoOInteres (precioAerolineas, 25, 1);
 					precioTarjetaCreditoLatam = calculoDescuentoOInteres (precioLatam, 25, 1);
-					precioEnBtcAerolineas = calculoCambioDeMoneda (precioAerolineas, 4606954.55, 0);
-					precioEnBtcLatam = calculoCambioDeMoneda (precioLatam, 4606954.55, 0);
+					precioEnBtcAerolineas = calculoCambioDeMoneda (precioAerolineas, VALOR_BTC, 0);
+					precioEnBtcLatam = calculoCambioDeMoneda (precioLatam, VALOR_BTC, 0);
 					precioUnitarioAerolineas = calculoPrecioUnitario (precioAerolineas, kilometros);
 					precioUnitarioLatam = calculoPrecioUnitario (precioLatam, kilometros);
 					diferenciaDePrecio = calculoDiferenciaDosNumerosFlotantes (precioAerolineas, precioLatam);
@@ -396,7 +402,7 @@ int main(void)
 			{
 				if(flagKilometrosValidados == 1 && flagprecioIngresadoAerolineas == 1 && flagprecioIngresadoLatam == 1 && flagCostosCalculados == 1)	//VER POR QUE A VECES TIRA LAS DIRECCIONES DE MEMORIA
 				{
-					printf("KMs Ingresados: %d Km\n", kilometros);
+					printf("KMs Ingresados: %.f Km\n", kilometros);
 					printf("\n");
 					printf("Precio Aerolineas: $ %.2f\n", precioAerolineas);
 					printf("a) Precio con tarjeta de débito: $ %.2f\n", precioTarjetaDebitoAerolineas);
@@ -484,6 +490,7 @@ int main(void)
 			break;
 		}
 	}
+
 	//---------------------------
 	//	> MENSAJE DE FINALIZACION
 	//---------------------------
@@ -499,6 +506,7 @@ int main(void)
 		printf("\n");
 		system ("pause");
 	}
+
 	//------------------------
 	//	> FINALIZO EL PROGRAMA
 	//------------------------
