@@ -1,24 +1,29 @@
 # tp_laboratorio_1
 
-_Trabajo Práctico realizado en Laboratorio 1 - 1F - C1 - 2022_
+
 ============================================================================================
-###TRABAJO PRACTICO N°1
+TRABAJO PRACTICO N°1
 Programación I – Laboratorio I
 Tecnicatura Superior en Programacion
 UTN-FRA
-**AUTORES**		MARINA CARDOZO
-**REVISORES**	LAURA CARELLI
-**ALUMNO**		HEREDIA FACUNDO
-**DIVISION**	1F
+1F - C1 - 2022
+- **AUTORES**		MARINA CARDOZO
+- **REVISORES**	LAURA CARELLI
+- **ALUMNO**		HEREDIA FACUNDO
+- **DIVISION**	1F
+
 ============================================================================================
+
+**ENUNCIADO**
 ```
-ENUNCIADO
 Una agencia de viaje necesita calcular costos para sus vuelos de Latam y Aerolíneas Argentinas
 para ofrecerlos a sus clientes.
 Se deberá ingresar por cada vuelo los km totales y el precio total del mismo.
 El objetivo de la aplicación es mostrar las diferentes opciones de pagos a sus clientes.
 Para ello el programa iniciará y contará con un menú de opciones:
-
+```
+**MENU PRINCIPAL DEL PROGRAMA**
+```
 1. Ingresar Kilómetros: ( km=x)
 2. Ingresar Precio de Vuelos: (Aerolíneas=y, Latam=z)
 - Precio vuelo Aerolíneas:
@@ -43,10 +48,12 @@ d) Precio unitario: r
 La diferencia de precio es : r “
 5. Carga forzada de datos
 6. Salir
-
-ACLARACIONES DEL FUNCIONAMIENTO
+```
+**ACLARACIONES DEL FUNCIONAMIENTO**
+```
 El menú se tiene que ver tal cual está descrito en la consigna. Los resultados se tienen que
 mostrar con el mismo formato. Se puede realizar un submenú para ingresar los km y los
 precios.
 Los resultados se tienen que ver con el formato presentado en el menú.
+
 ```
