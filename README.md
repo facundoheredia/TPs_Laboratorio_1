@@ -3,13 +3,11 @@
 
 ===========================================================================
  
-                                TRABAJO PRACTICO N°1
+## TRABAJO PRACTICO N°1
 
-                            Programación I – Laboratorio I
+Programación I – Laboratorio I
 
-                         Tecnicatura Superior en Programacion
-
-                                        UTN-FRA
+Tecnicatura Superior en Programacion - UTN-FRA
 
 
 
