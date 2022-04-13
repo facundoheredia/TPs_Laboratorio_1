@@ -2,15 +2,21 @@
 
 
 ===========================================================================
-TRABAJO PRACTICO N°1
-Programación I – Laboratorio I
-Tecnicatura Superior en Programacion
-UTN-FRA
-1F - C1 - 2022
-- **AUTORES**		MARINA CARDOZO
-- **REVISORES**	LAURA CARELLI
-- **ALUMNO**		HEREDIA FACUNDO
-- **DIVISION**	1F
+ 
+                                TRABAJO PRACTICO N°1
+
+                            Programación I – Laboratorio I
+
+                         Tecnicatura Superior en Programacion
+
+                                        UTN-FRA
+
+
+
+- **AUTORES:** MARINA CARDOZO
+- **REVISORES:** LAURA CARELLI
+- **ALUMNO:**	HEREDIA FACUNDO
+- **DIVISION:**	1F - C1 - 2022
 
 ===========================================================================
 
