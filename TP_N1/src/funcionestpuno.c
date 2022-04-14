@@ -29,7 +29,6 @@ int elegirOpcion (int flag)
 
 		return opcionElegida;
 }
-
 //---------------------------------------------------------------------------------------
 //	> FUNCION DE FORZAR CARGA
 
