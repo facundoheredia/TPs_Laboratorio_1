@@ -6,6 +6,13 @@
 #ifndef FUNCIONESTPUNO_H_
 #define FUNCIONESTPUNO_H_
 
+//	> INGRESAR OPCION
+/// @brief Pide una opcion a elegir y la devuelve
+///
+/// @param flag				-> El estado para saber hasta que opcion permite elegir
+/// @return opcionElegida	-> Devuelve el numero ingresado
+int elegirOpcion (int flag);
+
 //	> FUNCION DE FORZAR CARGA
 /// @brief Hardcodea los datos del punto 5 para ser calculados por las distintas funciones y ser mostrados
 ///

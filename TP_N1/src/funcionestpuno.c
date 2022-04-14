@@ -6,6 +6,29 @@
 //	> BIBLIOTECAS NECESARIAS
 #include <stdio.h>
 #include "calculos.h"
+#include "validaciones.h"
+
+//---------------------------------------------------------------------------------------
+//	> INGRESAR OPCION
+int elegirOpcion (int flag)
+{
+	int opcionElegida;
+
+	printf("Ingrese una opci%cn\n", 162);
+	scanf("%d", &opcionElegida);
+
+
+		if(flag == 0)
+		{
+			opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 6);
+		}
+		else
+		{
+			opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 7);
+		}
+
+		return opcionElegida;
+}
 
 //---------------------------------------------------------------------------------------
 //	> FUNCION DE FORZAR CARGA

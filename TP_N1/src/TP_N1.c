@@ -248,19 +248,7 @@ int main(void)
 			flagOpcionSieteHabilitada = 1;
 		}
 		//	>> Eleccion de opcion
-		printf("Ingrese una opci%cn\n", 162);
-		scanf("%d", &opcionElegida);
-
-		//		>> Validacion de opcion elegida
-
-		if(flagOpcionSieteHabilitada == 0)
-		{
-			opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 6);
-		}
-		else
-		{
-			opcionElegida = validacionNumeroEnteroEntreRangos (opcionElegida, 1, 7);
-		}
+		opcionElegida = elegirOpcion (flagOpcionSieteHabilitada);
 		system("cls");
 
 		//-------------
@@ -281,7 +269,7 @@ int main(void)
 			if(flagCargaForzada == 1)
 			{
 				mensajeDatosForzadosIngresados (flagCargaForzada);
-				system ("pause");
+				system("pause");
 			}
 			else
 			{
@@ -303,7 +291,7 @@ int main(void)
 			if(flagCargaForzada == 1)
 			{
 				mensajeDatosForzadosIngresados (flagCargaForzada);
-				system ("pause");
+				system("pause");
 				system("cls");
 			}
 			else
@@ -383,7 +371,7 @@ int main(void)
 			}
 
 			printf("\n");
-			system ("pause");
+			system("pause");
 			system("cls");
 			break;
 		//	>> Sub menu Opcion 4
@@ -430,7 +418,7 @@ int main(void)
 					printf("\n");
 				}
 			}
-			system ("pause");
+			system("pause");
 			system("cls");
 			break;
 		case 5:
@@ -454,7 +442,7 @@ int main(void)
 				flagCargaForzada = 1;
 				flagCostosCalculados = 2;
 			}
-			system ("pause");
+			system("pause");
 			system("cls");
 			break;
 		case 6:
@@ -504,7 +492,7 @@ int main(void)
 		printf(" 	  < PROGRAMA FINALIZADO >\n");
 		printf(" __________________________________________\n");
 		printf("\n");
-		system ("pause");
+		system("pause");
 	}
 
 	//------------------------
