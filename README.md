@@ -78,6 +78,7 @@ Tecnicatura Superior en Programacion - UTN-FRA
 - **DIVISION:**	1F - C1 - 2022
 
 ===========================================================================
+
 **ENUNCIADO**
 ```
 Una aerolínea requiere un sistema para administrar los pasajeros de cada vuelo. Se sabe que
