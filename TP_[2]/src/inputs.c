@@ -20,6 +20,52 @@
 //	==================================
 //	> FUNCIONES DE ENTRADA PRINCIPALES
 //	==================================
+//	FUNCION PRINCIPAL DE ENTRADA DE NUMERO SIN RANGO (CON PUNTERO UTN)
+int entrada_obtenerEnteroSinRango(int* entrada, char mensaje[], char mensajeError[])
+{
+    int retorno;
+    int contador;
+    int numeroValido;
+    int numeroEntero;
+    char cadenaNumerica[64];
+
+    retorno = -1;
+    contador = 0;
+    numeroValido = -1;
+
+    if(entrada != NULL && mensaje != NULL && mensajeError != NULL)
+    {
+        do
+        {
+        	contador++;
+
+            if(contador == 1)
+            {
+                printf("%s", mensaje);
+            }
+            else
+            {
+                if(contador > 1)
+                {
+                    printf("%s", mensajeError);
+                }
+            }
+
+            scanf("%s", cadenaNumerica);
+
+            numeroValido = entrada_esNumero(cadenaNumerica);
+            if(numeroValido)
+            {
+            	numeroEntero = atoi(cadenaNumerica);
+            }
+        } while(!numeroValido);
+
+        *entrada = numeroEntero;
+        retorno = 0;
+    }
+
+    return retorno;
+}
 //	FUNCION PRINCIPAL DE ENTRADA DE NUMERO ENTERO ENTRE RANGO (CON PUNTERO UTN)
 int entrada_obtenerEntero(int* entrada, char mensaje[], char mensajeError[], int limiteInferior, int limiteSuperior)
 {

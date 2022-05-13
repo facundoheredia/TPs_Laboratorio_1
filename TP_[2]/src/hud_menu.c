@@ -51,7 +51,8 @@ int menuPricipal (void)
 	printf("บ  [2] MODIFICAR PASAJERO                                         บ\n");
 	printf("บ  [3] BAJA DE PASAJERO                                           บ\n");
 	printf("บ  [4] INFORMES                                                   บ\n");
-	printf("บ  [5] SALIR                                                      บ\n");
+	printf("บ  [5] PASAJEROS HARDCODEADOS                                     บ\n");
+	printf("บ  [6] SALIR                                                      บ\n");
 	printf("ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
 
 	opcionMenuValidada = entrada_obtenerEnteroEntreRango ("INGRESE UNA OPCION: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", M_OPCION_MINIMA, MP_OPCION_MAXIMA);

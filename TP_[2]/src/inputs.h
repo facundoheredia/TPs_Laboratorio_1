@@ -6,6 +6,17 @@
 #ifndef INPUTS_H_INCLUDED
 #define INPUTS_H_INCLUDED
 
+
+
+//	FUNCION PRINCIPAL DE ENTRADA DE NUMERO SIN RANGO (CON PUNTERO UTN)
+/// @brief FUNCION SOLICITA UN NUMERO SIN RANGO ALGUNO
+///
+/// @param entrada* int Se carga el numero ingresado
+/// @param mensaje[] cahar Es el mensaje a ser mostrado
+/// @param mensajeError[] char es el mensaje a ser mostrado en caso de error
+/// @return int Si obtuvo el numero devuelve [0] si no [-1]
+int entrada_obtenerEnteroSinRango(int* entrada, char mensaje[], char mensajeError[]);
+
 /// @brief SOLICITA UN NUMERO Y LO VALIDA
 ///
 /// @param entrada* int Se carga el numero ingresado.

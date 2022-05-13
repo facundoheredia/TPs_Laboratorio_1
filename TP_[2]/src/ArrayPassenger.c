@@ -343,21 +343,23 @@ int Passenger_Baja(Passenger list[], int length, EstadosDeVuelo listadoEstadosDe
 {
 	int retorno;
 	int idPasajeroBaja;
-	int contadorId;
+	//int contadorId;
 
 	retorno = -1;
 
 	//IMPRIMO LISTA DE PASAJEROS
 	printPassenger(list, length, listadoEstadosDeVuelo, longitudListaEstadosDeVuelos, listaDeTipoPasajeros, longitudListaDeTipoPasajero);
-	contadorId = Passenger_contar_id(list, length);
+	//contadorId = Passenger_contar_id(list, length);
 
 	//PIDO DATO DEL ID DEL PASAJERO
-	entrada_obtenerEntero(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
+	entrada_obtenerEnteroSinRango(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE");
+	//entrada_obtenerEntero(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
 
 	while(findPassengerById(list, length,idPasajeroBaja) == -1)
 	{
 		mostrarMensaje("NO SE ENCONTRO EL ID, REINTENTE");
-		entrada_obtenerEntero(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
+		entrada_obtenerEnteroSinRango(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE");
+		//entrada_obtenerEntero(&idPasajeroBaja, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
 	}
 
 	if(findPassengerById(list, length,idPasajeroBaja) != -1)
@@ -494,15 +496,15 @@ int Passenger_Modificar(Passenger list[], int length, EstadosDeVuelo listadoEsta
 	int indicePasajero;
 	Passenger pasajeroAuxiliar;
 	char respuesta;
-	int contadorId;
+	//int contadorId;
 
 	retorno = -1;
 
 	//IMPRIMO LISTA DE PASAJEROS
 	printPassenger(list, length, listadoEstadosDeVuelo, longitudListaEstadosDeVuelos, listaDeTipoPasajeros, longitudListaDeTipoPasajero);
-	contadorId = Passenger_contar_id(list, length);
-
-	entrada_obtenerEntero(&idPasajero, "INGRESE EL ID DEL PASAJERO A DAR DE BAJA:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
+	//contadorId = Passenger_contar_id(list, length);
+	entrada_obtenerEnteroSinRango(&idPasajero, "INGRESE EL ID DEL PASAJERO A MODIFICAR:", "ERROR! INTENTE NUEVAMENTE");
+	//entrada_obtenerEntero(&idPasajero, "INGRESE EL ID DEL PASAJERO A MODIFICAR:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
 
 	indicePasajero = findPassengerById(list, length, idPasajero);
 

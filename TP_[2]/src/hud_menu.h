@@ -17,7 +17,7 @@
 //	> DEFINICIONES
 //	==============
 #define M_OPCION_MINIMA 1
-#define MP_OPCION_MAXIMA 5
+#define MP_OPCION_MAXIMA 6
 #define MM_OPCION_MAXIMA 6
 #define ML_OPCION_MAXIMA 4
 

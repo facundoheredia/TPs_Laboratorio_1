@@ -45,12 +45,16 @@ int main(void)
 	Passenger listaPasajeros[CANTIDAD_MAXIMA_PASAJEROS];
 	EstadosDeVuelo listaEstadosDeVuelos[LONGITUD_ESTADO_VUELO] = {{0, "A TIEMPO"},{1,"ABORDANDO"},{2,"ARRIBO"},{3,"REPROGRAMADO"},{4,"CANCELADO"}};
 	TiposPasajeros listaDeTipoPasajeros[LONGITUD_DE_TIPO_PASAJERO] = {{0, "ECONOMICO"},{1, "1ra CLASE"},{2, "EJECUTIVO"}};
+	//		>> variables [opcion 5]
+	int banderaHardcodeados;
 
 	//	=============================
 	//	> INICIALIZACION DE VARIABLES
 	//	=============================
 	//		>> variables opcion [1]
 	cantidadAltas = 0;
+	//		>> variables [opcion 5]
+	banderaHardcodeados = 0;
 
 	//	====================================
 	//	> INICIO DEL PROGRAMA - PRESENTACION
@@ -60,8 +64,6 @@ int main(void)
 	if(respuesta == 'S')
 	{
 		inicioPasajeros = initPassengers(listaPasajeros, CANTIDAD_MAXIMA_PASAJEROS);
-		ePassenger_hardcodeados(listaPasajeros, CANTIDAD_MAXIMA_PASAJEROS);
-		cantidadAltas = 10;
 
 		if(inicioPasajeros == 0)
 		{
@@ -132,11 +134,24 @@ int main(void)
 							mostrarMensajeParaContinuar(MENSAJE_NO_HAY_ALTAS);
 						}
 						break;
-					case 5: //	SALIDA DEL PROGRAMA
+					case 5: //	[ OPCION CARGA FORZADA DE PASAJEROS ]
+						if( banderaHardcodeados == 0)
+						{
+							ePassenger_hardcodeados(listaPasajeros, CANTIDAD_MAXIMA_PASAJEROS);
+							cantidadAltas += 10;
+							banderaHardcodeados = 1;
+							mostrarMensajeParaContinuar("SE HAN HARDCODEADOS DATOS DE PASAJEROS");
+						}
+						else
+						{
+							mostrarMensaje("YA SE HAN HARDCODEADOS PASAJEROS");
+						}
+						break;
+					case 6: //	SALIDA DEL PROGRAMA
 						respuesta = 'S';
 						break;
 				}
-			}while(opcionMenuValida != 5);
+			}while(opcionMenuValida != 6);
 		}
 		else
 		{
