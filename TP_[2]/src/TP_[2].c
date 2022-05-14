@@ -14,6 +14,12 @@ DIVISION	1F
 ==============================================================================================
 */
 
+
+//					POR FAVOR, EJECUTAR DESDE EL .EXE DE LA CARPETA DEBUG
+//					PARA SU CORRECTAR VISUALIZACION
+//					MUCHAS GRACIAS
+
+
 //	========================
 //	> BIBLIOTECAS NECESARIAS
 //	========================
