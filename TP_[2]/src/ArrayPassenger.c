@@ -496,13 +496,12 @@ int Passenger_Modificar(Passenger list[], int length, EstadosDeVuelo listadoEsta
 	int indicePasajero;
 	Passenger pasajeroAuxiliar;
 	char respuesta;
-	//int contadorId;
 
 	retorno = -1;
 
 	//IMPRIMO LISTA DE PASAJEROS
 	printPassenger(list, length, listadoEstadosDeVuelo, longitudListaEstadosDeVuelos, listaDeTipoPasajeros, longitudListaDeTipoPasajero);
-	//contadorId = Passenger_contar_id(list, length);
+
 	entrada_obtenerEnteroSinRango(&idPasajero, "INGRESE EL ID DEL PASAJERO A MODIFICAR:", "ERROR! INTENTE NUEVAMENTE");
 	//entrada_obtenerEntero(&idPasajero, "INGRESE EL ID DEL PASAJERO A MODIFICAR:", "ERROR! INTENTE NUEVAMENTE", ID_MINIMO, contadorId);
 

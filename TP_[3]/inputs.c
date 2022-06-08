@@ -12,11 +12,6 @@
 #include <ctype.h>
 #include "inputs.h"
 
-//	========
-//	> DEFINE
-//	========
-
-
 //	==================================
 //	> FUNCIONES DE ENTRADA PRINCIPALES
 //	==================================
@@ -316,58 +311,9 @@ char entrada_respuestaUsuario(char mensaje[])
     		 respuesta = toupper(respuesta);
 
     	}while(respuesta != 'S' && respuesta != 'N');
-
     }
 
     return respuesta;
-}
-
-//	FUNCION PRINCIPAL DE ENTRADA CADENA DE NUMERO FLOTANTE ENTRE RANGO (CON PUNTERO UTN))
-int entrada_obtenerCadenaFlotante(char* entrada, char mensaje[], char mensajeError[], float limiteInferior, float limiteSuperior)
-{
-    int retorno;
-    int contador;
-    int numeroValido = -1;
-    float numeroFlotante;
-    char cadenaNumerica[64];
-
-    retorno = -1;
-    contador = 0;
-    numeroValido = -1;
-
-
-    if(limiteSuperior >= limiteInferior && entrada != NULL && mensaje != NULL && mensajeError != NULL)
-    {
-        do
-        {
-        	contador++;
-
-            if(contador == 1)
-            {
-                printf("%s", mensaje);
-            }
-            else
-            {
-                printf("%s", mensajeError);
-            }
-
-            scanf("%s", cadenaNumerica);
-
-            numeroValido = entrada_esFlotante(cadenaNumerica);
-            if(numeroValido)
-            {
-                numeroFlotante = atof(cadenaNumerica);
-            }
-        } while(!numeroValido || (numeroValido && (numeroFlotante < limiteInferior || numeroFlotante > limiteSuperior)));
-
-        if(numeroFlotante >= limiteInferior && numeroFlotante <= limiteSuperior)
-        {
-            *entrada = numeroFlotante;
-            retorno = 0;
-        }
-    }
-
-    return retorno;
 }
 //	==================================
 //	> FUNCIONES DE ENTRADA SECUNDARIAS
@@ -624,3 +570,30 @@ int esAlfaNumerico(char str[])
    return 1;
 }
 
+//	FUNCION CADENA PRIMERA MAYUSCULAS
+char* cadena_PrimeraMayusculas(char cadena[], int largoCadena)
+{
+    char* cadenaAuxiliar;
+    int posicion;
+
+    cadenaAuxiliar = cadena;
+    posicion = 0;
+
+    if(cadena != NULL && largoCadena > 0)
+    {
+        while(posicion <= largoCadena && cadenaAuxiliar[posicion] != '\0')
+        {
+            if((posicion == 0 && cadenaAuxiliar[posicion] != ' ') || (posicion > 0 && cadenaAuxiliar[posicion - 1] == ' ' && cadenaAuxiliar[posicion] != ' '))
+            {
+            	cadenaAuxiliar[posicion] = toupper((char)cadenaAuxiliar[posicion]);
+            }
+            else
+            {
+            	cadenaAuxiliar[posicion] = tolower((char)cadenaAuxiliar[posicion]);
+            }
+            posicion++;
+        }
+        cadenaAuxiliar[posicion] = '\0';
+    }
+    return cadenaAuxiliar;
+}

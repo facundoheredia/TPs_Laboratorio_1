@@ -16,10 +16,11 @@ char iniciarPrograma (void)
 
 	system("cls");
 	printf("ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
-	printf("บ                  ฑฒÛ TRABAJO PRACTICO N2 Ûฒฑ                    บ\n");
+	printf("บ                  ฑฒÛ TRABAJO PRACTICO N3 Ûฒฑ                    บ\n");
 	printf("ฬอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
 	printf("บ                                                                 บ\n");
-	printf("บ  PROGRAMA ALTAS, BAJAS, MODIFICACIONES E INFORMES DE PASAJEROS  บ\n");
+	printf("บ                       PROGRAMA LINKEDLIST                       บ\n");
+	printf("บ      ALTAS, BAJAS, MODIFICACIONES E INFORMES DE PASAJEROS       บ\n");
 	printf("บ                                                                 บ\n");
 	printf("บ  DIVISION: 1F                                                   บ\n");
 	printf("บ  ALUMNO: Heredia Facundo                                        บ\n");
@@ -44,16 +45,20 @@ int menuPricipal (void)
 {
 	int opcionMenuValidada;
 
-	printf("ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
-	printf("บ                     ฑฒÛ MENU  PRINCIPAL Ûฒฑ                     บ\n");
-	printf("ฬอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
-	printf("บ  [1] ALTA DE PASAJERO                                           บ\n");
-	printf("บ  [2] MODIFICAR PASAJERO                                         บ\n");
-	printf("บ  [3] BAJA DE PASAJERO                                           บ\n");
-	printf("บ  [4] INFORMES                                                   บ\n");
-	printf("บ  [5] PASAJEROS HARDCODEADOS                                     บ\n");
-	printf("บ  [6] SALIR                                                      บ\n");
-	printf("ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+	printf("ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
+	printf("บ                             ฑฒÛ MENU  PRINCIPAL Ûฒฑ                             บ\n");
+	printf("ฬอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
+	printf("บ  [01] CARGAR LOS DATOS DE LOS PASAJEROS DESDE ARCHIVO data.csv (modo texto)     บ\n");
+	printf("บ  [02] CARGAR LOS DATOS DE LOS PASAJEROS DESDE ARCHIVO data.bin (modo binario)   บ\n");
+	printf("บ  [03] ALTA DE PASAJERO                                                          บ\n");
+	printf("บ  [04] MODIFICAR DATOS DE PASAJERO                                               บ\n");
+	printf("บ  [05] BAJA DE PASAJERO                                                          บ\n");
+	printf("บ  [06] LISTAR PASAJEROS                                                          บ\n");
+	printf("บ  [07] ORDENAR PASAJEROS                                                         บ\n");
+	printf("บ  [08] GUARDAR LOS DATOS DE LOS PASAJEROS EN EL ARCHIVO data.csv (modo texto)    บ\n");
+	printf("บ  [09] GUARDAR LOS DATOS DE LOS PASAJEROS EN EL ARCHIVO data.bin (modo binario)  บ\n");
+	printf("บ  [10] SALIR                                                                     บ\n");
+	printf("ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
 
 	opcionMenuValidada = entrada_obtenerEnteroEntreRango ("INGRESE UNA OPCION: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", M_OPCION_MINIMA, MP_OPCION_MAXIMA);
 	system("cls");
@@ -86,9 +91,9 @@ int menuModificacion (void)
 	printf("บ  [1] NOMBRE                                                     บ\n");
 	printf("บ  [2] APELLIDO                                                   บ\n");
 	printf("บ  [3] PRECIO                                                     บ\n");
-	printf("บ  [4] TIPO DE PASAJERO                                           บ\n");
-	printf("บ  [5] CODIGO DE VUELO                                            บ\n");
-	printf("บ  [6] SALIR                                                      บ\n");
+	printf("บ  [4] CODIGO DE VUELO                                            บ\n");
+	printf("บ  [5] TIPO DE PASAJERO                                           บ\n");
+	printf("บ  [6] VOLVER AL MENU PRINCIPAL                                   บ\n");
 	printf("ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
 
 	opcionMenuValidada = entrada_obtenerEnteroEntreRango ("INGRESE UNA OPCION: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", M_OPCION_MINIMA, MM_OPCION_MAXIMA);
@@ -112,39 +117,54 @@ void encabezadoBajas (void)
 void encabezadoDarDeBaja (void)
 {
 	printf("\n");
-	printf("ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
-	printf("บ                                  EL SIGUIENTE PASAJERO SE DARA DE BAJA                                 บ\n");
-	printf("ฬออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
+	printf("ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
+	printf("บ                                      EL SIGUIENTE PASAJERO SE DARA DE BAJA                                     บ\n");
+	printf("ฬออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
 }
 //	================================================================================================================
 //	> FUNCION ENCABEZADO TABLA
 void encabezadoTabla (void)
 {
 	printf("\n");
-	printf("ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
-	printf("บ  ID   |      NOMBRE     |    APELLIDO     |    PRECIO    | COD. VUELO | TIPO PASAJERO | EST. DE VUELO  บ\n");
-	printf("ฬออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
+	printf("ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป\n");
+	printf("บ  ID   |      NOMBRE     |    APELLIDO     |    PRECIO    | COD. VUELO |     TIPO PASAJERO     | EST. DE VUELO  บ\n");
+	printf("ฬออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน\n");
 }
 //	================================================================================================================
 //	> FUNCION PIE DE PAGINA TABLA
 void PieDePaginaTabla (void)
 {
-	printf("ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+	printf("ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+}
+//	================================================================================================================
+//	> FUNCION ENCABEZADO TABLA TIPO PASAJERO
+void encabezadoTablaTipoPasajero (void)
+{
+	printf("\n");
+	printf("ษออออออออออออออออออออออป\n");
+	printf("บ     TIPO PASAJERO    บ\n");
+	printf("ฬออออออออออออออออออออออน\n");
+}
+//	================================================================================================================
+//	> FUNCION PIE DE TIPO PASAJERO
+void PieDePaginaTablaTipoPasajero (void)
+{
+	printf("ศออออออออออออออออออออออผ\n");
 }
 //	================================================================================================================
 //	> FUNCION ENCABEZADO TABLA CODIGOS DE VUELO
 void encabezadoTablaCodigosDeVuelo (void)
 {
 	printf("\n");
-	printf("ษออออออออออออออป\n");
-	printf("บ  COD. VUELO  บ\n");
-	printf("ฬออออออออออออออน\n");
+	printf("ษอออออออออออออออป\n");
+	printf("บ  COD. VUELO   บ\n");
+	printf("ฬอออออออออออออออน\n");
 }
 //	================================================================================================================
 //	> FUNCION PIE DE PAGINA TABLA
 void PieDePaginaTablaCodigosDeVuelo (void)
 {
-	printf("ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ\n");
+	printf("ศอออออออออออออออผ\n");
 }
 //	================================================================================================================
 //	> FUNCION LISTADO DE PASAJEROS
@@ -170,3 +190,27 @@ int menuListado (void)
 	return opcionMenuValidada;
 }
 //	================================================================================================================
+//	> FUNCION ORDENAR PASAJEROS
+int menuOrdenar (void)
+{
+	int opcionMenuValidada;
+
+	system("cls");
+	printf("\n");
+	printf("ษอออออออออออออออออออออออออออออออออออออป\n");
+	printf("บ  ฑฒÛ ORDENAMIENTO DE PASAJEROS Ûฒฑ  บ\n");
+	printf("ฬอออออออออออออออออออออออออออออออออออออน\n");
+	printf("บ  [1] POR ID                         บ\n");
+	printf("บ  [2] POR NOMBRE                     บ\n");
+	printf("บ  [3] POR APELLIDO                   บ\n");
+	printf("บ  [4] POR PRECIO                     บ\n");
+	printf("บ  [5] POR CODIGO DE VUELO            บ\n");
+	printf("บ  [6] POR TIPO DE PASAJERO           บ\n");
+	printf("บ  [7] POR ESTADO DE VUELO            บ\n");
+	printf("บ  [8] SALIR                          บ\n");
+	printf("ศอออออออออออออออออออออออออออออออออออออผ\n");
+
+	opcionMenuValidada = entrada_obtenerEnteroEntreRango ("INGRESE UNA OPCION: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", "UPS! NO ES UN DATO VALIDO, REINTENTE: ", M_OPCION_MINIMA, MO_OPCION_MAXIMA);
+	system("cls");
+	return opcionMenuValidada;
+}
